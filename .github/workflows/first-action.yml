@@ -1,0 +1,11 @@
+name: First Workflow # the name of the workflow that will be shown in the Actions dasboard
+on: workflow_dispatch # the trigger for the workflow 
+
+jobs:
+  first-job: # defining 1 simple Job with 2 easy Steps
+    runs-on: ubuntu-latest # the compute power executing the Jobs
+    steps:
+      - name: Print greeting # defining just a descriptive name for each Job
+        run: echo "HELLO GITHUB AND HELLO WORLD!!!!"
+      - name: Print goodbye
+        run: echo "AAAAAAND THAT WAS IT - DONE - BYEBYE"
