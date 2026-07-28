@@ -1,0 +1,22 @@
+name: Test the Project # the name of the workflow that will be shown in the Actions dasboard
+on: push # trigger this Workflow whenever a new commit Push happens 
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the code from the repo # 1st step - download the local code
+        uses: actions/checkout@v3
+        # the next step is to make sure that we got nodejs installed, and we install
+        # all dependencies of this project 
+        # although, the Runner "ubuntu latest" has nodejs already installed
+      - name: Install NodeJS
+        uses: actions/setup-node@v3 # 2nd step - install nodejs version18
+        with:
+          node-version: 18
+
+      - name: Install all dependencies # 3rd-step we want to install the dependencies
+        run: npm ci # better than npm install - it only installs what on your package-lock file
+        
+      - name: Run the tests # 4th-step, with everything installed on the Runner, we can run tests
+        run: npm test # to do that, we run a regular command 
