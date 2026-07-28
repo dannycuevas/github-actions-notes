@@ -13,7 +13,7 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v3 # 2nd step - install nodejs version18
         with:
-          node-version: 18
+          node-version: 24
 
       - name: Install all dependencies # 3rd-step we want to install the dependencies
         run: npm ci # better than npm install - it only installs what on your package-lock file
