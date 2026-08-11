@@ -1,5 +1,5 @@
 name: Deploy the Project # the name of the workflow that will be shown in the Actions dasboard
-on: push # trigger this Workflow whenever a new commit Push happens 
+on: [push, workflow_dispatch] # trigger this Workflow whenever a new commit Push happens and a manual trigger
 
 # All Jobs will run in parallel just as the Workflow starts 
 jobs:
