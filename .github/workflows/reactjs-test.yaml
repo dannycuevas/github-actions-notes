@@ -1,6 +1,7 @@
 name: Deploy the Project # the name of the workflow that will be shown in the Actions dasboard
 on: push # trigger this Workflow whenever a new commit Push happens 
 
+# All Jobs will run in parallel just as the Workflow starts 
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -23,6 +24,7 @@ jobs:
 
 # adding a second Job named "deploy"
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps: # we will want to repeat some steps as in te 1st Job
       - name: Download the code from the repo # 1st step - download the local code
@@ -38,6 +40,6 @@ jobs:
       - name: Install all dependencies # 3rd-step we want to install the dependencies
         run: npm ci
       - name: Build the Project # 4th step we wil start building the project
-        run: npm run build # most projects need to be built before being deployed
+        run: npm run build # most projects need to be built before being deployed like using a package.json
       - name: Deploy
         run: echo "Deploying our Kubernetes application ..."
