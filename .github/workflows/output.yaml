@@ -4,5 +4,5 @@ jobs:
   info: # we are defining just 1 job named "info"
     runs-on: ubuntu-latest # this job runs in ubuntu
     steps:
-      - name: Output GitHub context
-        run: echo "${{ toJSON(github) }}"
+      - name: Output GitHub context # the name for this first step
+        run: echo "${{ toJSON(github) }}" # the data object we are accessing within github

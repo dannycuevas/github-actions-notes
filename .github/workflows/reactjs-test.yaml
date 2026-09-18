@@ -3,7 +3,7 @@ on: [push, workflow_dispatch] # trigger this Workflow whenever a new commit Push
 
 # All Jobs will run in parallel just as the Workflow starts 
 jobs:
-  test:
+  test: # First Job of the Workflow
     runs-on: ubuntu-latest
     steps:
       - name: Download the code from the repo # 1st step - download the local code
