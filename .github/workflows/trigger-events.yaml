@@ -1,6 +1,11 @@
 name: Simple Trigger
-
-on: workflow_dispatch
+on:
+  pull_request:
+    types: 
+      - opened
+      - synchronize
+      - reopened
+  workflow_dispatch:
 
 jobs:
   simple-job:
