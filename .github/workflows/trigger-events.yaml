@@ -1,0 +1,20 @@
+name: Simple Trigger
+
+on: ...
+
+jobs:
+  simple-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output event data
+      run: echo "${{ toJSON(github.event) }}"
+      - name: Get the code
+      run: echo "Getting the code for the repository!"
+      - name: Install dependencies
+      run: echo "Installing the dependencies my brotha!"
+      - name: Test the code
+      run: echo "Testing the code my brotha!"
+      - name: Build the code
+      run: echo "Lets build the code my brotha!"
+      - name: Deploying the app
+      run: echo "We are deploying your app my brotha!"
