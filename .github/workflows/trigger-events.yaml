@@ -6,6 +6,13 @@ on:
       - synchronize
       - reopened
   workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'dev-*' # all branches that start with dev- with no slashes thereafter
+      - 'feat/**' # all branches that start with feat/ inclusing all slashes thereafter
+    paths-ignore:
+      - '.github/workflows/*'
 
 jobs:
   simple-job:
